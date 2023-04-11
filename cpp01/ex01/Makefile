@@ -1,4 +1,4 @@
-NAME		= phonebook
+NAME		= zombieHorde
 
 INCLUDES	= -I ./
 
@@ -9,9 +9,9 @@ CC			= c++
 RM			= rm -rf
 
 SRCS		= \
-				phonebook.cpp		\
+				zombieHorde.cpp	\
+				Zombie.cpp	\
 				main.cpp
-
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)

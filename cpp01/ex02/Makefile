@@ -1,4 +1,4 @@
-NAME		= phonebook
+NAME		= brainz
 
 INCLUDES	= -I ./
 
@@ -9,9 +9,7 @@ CC			= c++
 RM			= rm -rf
 
 SRCS		= \
-				phonebook.cpp		\
 				main.cpp
-
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)

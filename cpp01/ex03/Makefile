@@ -1,4 +1,4 @@
-NAME		= phonebook
+NAME		= violence
 
 INCLUDES	= -I ./
 
@@ -9,9 +9,10 @@ CC			= c++
 RM			= rm -rf
 
 SRCS		= \
-				phonebook.cpp		\
+				Weapon.cpp	\
+				HumanA.cpp	\
+				HumanB.cpp	\
 				main.cpp
-
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)

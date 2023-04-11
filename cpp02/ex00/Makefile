@@ -1,4 +1,4 @@
-NAME		= phonebook
+NAME		= fixed
 
 INCLUDES	= -I ./
 
@@ -9,9 +9,8 @@ CC			= c++
 RM			= rm -rf
 
 SRCS		= \
-				phonebook.cpp		\
+				Fixed.cpp	\
 				main.cpp
-
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)

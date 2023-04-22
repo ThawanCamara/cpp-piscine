@@ -9,7 +9,8 @@ CC			= c++
 RM			= rm -rf
 
 SRCS		= \
-				phonebook.cpp		\
+				Phonebook.cpp		\
+				Contact.cpp			\
 				main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)

@@ -10,12 +10,12 @@ class HumanA
 		HumanA(std::string name, Weapon &weapon);
 		HumanA(const HumanA&);
 		HumanA& operator=(const HumanA&);
-		~HumanA(){};
+		~HumanA();
 
 		void		attack(void);
-		std::string	getName() { return (name); };
-		Weapon		*getWeapon() { return (weapon); };
-		void		setWeapon(Weapon &weapon) { this->weapon = &weapon; };
+		std::string	getName();
+		Weapon		*getWeapon();
+		void		setWeapon(Weapon &weapon);
 
 	private:
 		std::string	name;

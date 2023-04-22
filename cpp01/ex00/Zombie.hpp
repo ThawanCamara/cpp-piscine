@@ -6,18 +6,15 @@
 class Zombie
 {
 	public:
-		Zombie(){};
+		Zombie();
 		Zombie(const Zombie&);
 		Zombie& operator=(const Zombie&);
 		~Zombie();
 
-		//void	announce(void) { std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl; };
 		void	announce(void);
-		//Zombie*	newZombie(std::string name);
-		//void	randomChump(std::string name);
 
-		std::string getName() { return (name); };
-		void		setName(std::string name) { this->name = name; };
+		std::string getName(); 
+		void		setName(std::string name); 
 
 	private:
 		std::string name;

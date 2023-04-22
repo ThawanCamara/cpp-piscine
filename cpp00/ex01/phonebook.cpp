@@ -2,7 +2,26 @@
 #include <string>
 #include <iomanip>
 #include <cstdlib>
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
+
+Phonebook::Phonebook()
+{
+	amountOfContacts = 0;
+}
+
+Phonebook::~Phonebook()
+{
+}
+
+Contact* Phonebook::getList()
+{
+	return (contactList);
+}
+
+int Phonebook::getAmountOfContacts()
+{
+	return (amountOfContacts);
+};
 
 const std::string prompt_table[] = 
 {
@@ -41,6 +60,7 @@ void Phonebook::addList(void)
 	contactList[0].setNickname(getInput(prompt_table[2]));
 	contactList[0].setPhoneNumber(getInput(prompt_table[3]));
 	contactList[0].setDarkestSecret(getInput(prompt_table[4]));
+	increaseAmountOfContacts();
 }
 
 std::string cropString(std::string input)
@@ -98,10 +118,11 @@ void Phonebook::searchList(void)
 		std::cout << "Your \e[38;5;201mContacts\e[0m list seems empty. Try adding some people to it" << std::endl;
 		return ;
 	}
-	std::cout << "Which \e[38;5;201mContact\e[0m are you looking for? \e[38;5;86m[1-8]\e[0m" << std::endl;
+	std::cout << "Which \e[38;5;201mContact\e[0m are you looking for? \e[38;5;86m[1-" << getAmountOfContacts() << "]\e[0m" << std::endl;
 	std::getline(std::cin, input);
 	key = atoi(input.c_str());
-	if (key < 1 || key > 8)
+	//if (key < 1 || key > 8)
+	if (key < 1 || key > getAmountOfContacts())
 	{
 		std::cout << "Index out of range, could not retrieve information" << std::endl;
 		return ;
@@ -118,4 +139,10 @@ void Phonebook::searchList(void)
 		std::cout << "Phone Number: " << contactList[key - 1].getPhoneNumber() << std::endl;
 		std::cout << "Darkest Secret: " << contactList[key - 1].getDarkestSecret() << std::endl;
 	}
+}
+
+void	Phonebook::increaseAmountOfContacts()
+{
+	if (amountOfContacts < 8)
+		amountOfContacts++;
 }

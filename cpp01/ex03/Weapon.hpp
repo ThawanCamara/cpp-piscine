@@ -10,10 +10,10 @@ class Weapon
 		Weapon(std::string type);
 		Weapon(const Weapon&);
 		Weapon& operator=(const Weapon&);
-		~Weapon(){};
+		~Weapon();
 
-		std::string	getType() { return (type); };
-		void		setType(std::string type) { this->type = type; };
+		std::string	getType();
+		void		setType(std::string type); 
 
 	private:
 		std::string type;

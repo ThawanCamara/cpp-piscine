@@ -1,4 +1,4 @@
-NAME		= megaphone
+NAME		= fragtrap
 
 INCLUDES	= -I ./
 
@@ -9,7 +9,10 @@ CC			= c++
 RM			= rm -rf
 
 SRCS		= \
-				megaphone.cpp
+				claptrap.cpp	\
+				scavtrap.cpp	\
+				fragtrap.cpp	\
+				main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)

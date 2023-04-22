@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 void debugFillList(Phonebook &phonebook);
 
@@ -31,9 +31,10 @@ int	main(int argc, char *argv[])
 		debugFillList(phonebook);
 	while (option != OptionExit)
 	{
-		//std::cout << "\e[38;5;48m$>\e[0m " << std::flush;
 		std::cout << "\e[38;5;48m$>\e[0m ";
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			break ;
 		std::cout << std::flush;
 		option = selectOption(input);
 		switch (option)
@@ -73,5 +74,6 @@ void debugFillList(Phonebook &phonebook)
 		phonebook.getList()[i].setNickname(tableFill[i][2]);
 		phonebook.getList()[i].setPhoneNumber(tableFill[i][3]);
 		phonebook.getList()[i].setDarkestSecret(tableFill[i][4]);
+		phonebook.increaseAmountOfContacts();
 	}
 }

@@ -1,23 +1,24 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include "contact.hpp"
+# include "Contact.hpp"
 
 class Phonebook
 {
 	public:
-		Phonebook(){};
-		Phonebook(const Phonebook&);
-		Phonebook& operator=(const Phonebook&);
-		~Phonebook(){};
+		Phonebook();
+		~Phonebook();
 
 		void addList();
 		void searchList();
 
-		Contact* getList() { return (contactList); };
+		Contact*	getList();
+		int			getAmountOfContacts();
+		void		increaseAmountOfContacts();
 
 	private:
 		Contact contactList[8];
+		int		amountOfContacts;
 };
 
 #endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/22 16:20:29 by tde-souz          #+#    #+#             */
+/*   Updated: 2023/04/22 16:20:30 by tde-souz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
@@ -13,8 +25,8 @@ class Fixed
 		void setRawBits(int const raw);
 	
 	private:
-		int value;
-		static const int fract = 8;
+		int _value;
+		static const int FRACT = 8;
 };
 
 #endif

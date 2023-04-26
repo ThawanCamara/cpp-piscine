@@ -9,8 +9,8 @@ CC			= c++
 RM			= rm -rf
 
 SRCS		= \
-				claptrap.cpp	\
-				scavtrap.cpp	\
+				ClapTrap.cpp	\
+				ScavTrap.cpp	\
 				main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 

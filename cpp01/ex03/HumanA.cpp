@@ -3,8 +3,8 @@
 
 HumanA::HumanA(std::string name, Weapon &weapon)
 {
-	this->name = name;
-	this->weapon = &weapon;
+	_name = name;
+	_weapon = &weapon;
 }
 
 HumanA::~HumanA()
@@ -18,15 +18,15 @@ void	HumanA::attack(void)
 
 std::string	HumanA::getName()
 {
-	return (name);
+	return (_name);
 }
 
 Weapon* HumanA::getWeapon()
 {
-	return (weapon);
+	return (_weapon);
 }
 
 void HumanA::setWeapon(Weapon &weapon)
 {
-	this->weapon = &weapon;
+	_weapon = &weapon;
 }

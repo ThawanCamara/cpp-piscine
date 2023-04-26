@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/22 17:08:39 by tde-souz          #+#    #+#             */
+/*   Updated: 2023/04/22 17:08:40 by tde-souz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
@@ -13,7 +25,6 @@ class Fixed
 		Fixed& operator=(const Fixed& other);
 		~Fixed();
 
-		friend std::ostream& operator<<(std::ostream&, const Fixed&);
 		static Fixed& min(Fixed& lvalue, Fixed& rvalue);
 		static Fixed& max(Fixed& lvalue, Fixed& rvalue);
 		static const Fixed& min(const Fixed& lvalue, const Fixed& rvalue);
@@ -40,8 +51,8 @@ class Fixed
 		float toFloat() const;
 		
 	private:
-		int fixedPoint;
-		static const int fraction = 8;		
+		int _fixedPoint;
+		static const int FRACTION = 8;		
 };
 
 std::ostream& operator<<(std::ostream&, const Fixed&);

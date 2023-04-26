@@ -1,5 +1,5 @@
-#include "scavtrap.hpp"
-#include "fragtrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 #include <iostream>
 
 void printClapInfo(ClapTrap& trap);
@@ -25,6 +25,7 @@ int main(void)
 	printClapInfo(trap2);
 	printClapInfo(trap3);
 	trap1.attack(trap2.getName());
+	trap4.highFiveGuys();
 	return (0);
 }
 

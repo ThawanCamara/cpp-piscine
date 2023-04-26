@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/23 18:26:36 by tde-souz          #+#    #+#             */
+/*   Updated: 2023/04/23 18:27:27 by tde-souz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
@@ -15,16 +27,16 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
-		std::string getName(void) const { return name; } ;
-		unsigned int	getHealth(void) const { return health; };
-		unsigned int	getEnergy(void) const { return energy; };
-		unsigned int	getDamage(void) const { return damage; };
-		unsigned int	getActionEnergyCost(void) const { return actionEnergyCost; };
+		std::string getName(void) const;
+		unsigned int	getHealth(void) const;
+		unsigned int	getEnergy(void) const;
+		unsigned int	getDamage(void) const;
+		unsigned int	getActionEnergyCost(void) const;
 		
-		void		setName(std::string name) { this->name = name; };
-		void		setHealth(const int value) { health = value; };
-		void		setEnergy(const int value) { energy = value; };
-		void		setDamage(const int value) { damage = value; };
+		void		setName(std::string name);
+		void		setHealth(const int value);
+		void		setEnergy(const int value);
+		void		setDamage(const int value);
 
 		int			tryPerformAction(std::string);
 
@@ -33,7 +45,7 @@ class ClapTrap
 		unsigned int	health;
 		unsigned int	energy;
 		unsigned int	damage;
-		static const int actionEnergyCost = 1;
+		static const int ACTION_ENERGY_COST = 1;
 };
 
 #endif

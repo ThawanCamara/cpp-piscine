@@ -3,8 +3,8 @@
 
 HumanB::HumanB(std::string name)
 {
-	this->name = name;
-	this->weapon = NULL;
+	_name = name;
+	_weapon = NULL;
 }
 
 HumanB::~HumanB()
@@ -18,15 +18,15 @@ void	HumanB::attack(void)
 
 std::string	HumanB::getName()
 {
-	return (name);
+	return (_name);
 }
 
 Weapon* HumanB::getWeapon()
 {
-	return (weapon);
+	return (_weapon);
 }
 
 void HumanB::setWeapon(Weapon &weapon)
 {
-	this->weapon = &weapon;
+	_weapon = &weapon;
 }

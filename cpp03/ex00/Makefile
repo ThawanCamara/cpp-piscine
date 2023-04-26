@@ -9,7 +9,7 @@ CC			= c++
 RM			= rm -rf
 
 SRCS		= \
-				claptrap.cpp	\
+				ClapTrap.cpp	\
 				main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 

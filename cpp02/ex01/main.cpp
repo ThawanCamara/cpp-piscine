@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/22 17:07:36 by tde-souz          #+#    #+#             */
+/*   Updated: 2023/04/22 20:57:15 by tde-souz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Fixed.hpp"
 
@@ -10,7 +22,7 @@ int	main(void)
 
 	a = Fixed(1234.4321f);
 
-	std::cout << "a is " << a.toFloat() << std::endl;
+	//std::cout << "a is " << a.toFloat() << std::endl;
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;

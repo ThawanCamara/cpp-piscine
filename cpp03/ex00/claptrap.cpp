@@ -1,4 +1,16 @@
-#include "claptrap.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/23 18:26:34 by tde-souz          #+#    #+#             */
+/*   Updated: 2023/04/23 18:40:03 by tde-souz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
 
 #include <iostream>
 
@@ -87,3 +99,47 @@ int ClapTrap::tryPerformAction(std::string action)
 	return (1);
 }
 
+std::string ClapTrap::getName(void) const
+{
+	return name;
+}
+
+unsigned int	ClapTrap::getHealth(void) const
+{
+	return health;
+}
+
+unsigned int	ClapTrap::getEnergy(void) const
+{
+	return energy;
+}
+
+unsigned int	ClapTrap::getDamage(void) const
+{
+	return damage;
+}
+
+unsigned int	ClapTrap::getActionEnergyCost(void) const
+{
+	return ACTION_ENERGY_COST;
+}
+
+void ClapTrap::setName(std::string name)
+{
+	this->name = name;
+}
+
+void ClapTrap::setHealth(const int value)
+{
+	health = value;
+}
+
+void ClapTrap::setEnergy(const int value)
+{
+	energy = value;
+}
+
+void ClapTrap::setDamage(const int value)
+{
+	damage = value;
+}

@@ -1,4 +1,4 @@
-#include "fragtrap.hpp"
+#include "FragTrap.hpp"
 #include <iostream>
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -49,5 +49,5 @@ void FragTrap::attack(const std::string& target)
 
 void FragTrap::highFiveGuys(void)
 {
-	std::cout << "\033[38;5;114mFragTrap: Event: GuardGate: \033[0m" << this->name << " is now guarding the gate. OMG!" << std::endl;
+	std::cout << "\033[38;5;13mFragTrap: Event: HighFive: \033[0m" << this->name << " WAAAAAAAAAAAOW!" << std::endl;
 }

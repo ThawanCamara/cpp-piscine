@@ -1,4 +1,4 @@
-#include "scavtrap.hpp"
+#include "ScavTrap.hpp"
 #include <iostream>
 
 void printClapInfo(ClapTrap& trap);

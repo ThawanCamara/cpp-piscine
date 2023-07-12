@@ -36,7 +36,7 @@ int main(void)
 
 	putHeader("Creating Bureaucrats");
 	name = std::string(RED).append("Simpson").append(RESET);
-	Bureaucrat a = Bureaucrat(name, 33);
+	Bureaucrat a = Bureaucrat(name, 303);
 
 	name = std::string(GREEN).append("Steeve").append(RESET);
 	Bureaucrat *b = new Bureaucrat(name, 75);

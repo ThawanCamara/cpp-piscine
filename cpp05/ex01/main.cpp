@@ -36,18 +36,18 @@ int main(void)
 	std::string name;
 	putHeader("Creating Forms");
 	name = std::string(GREEN).append("Neat Form").append(RESET);
-	Form f1(name, 15, 50);
+	AForm f1(name, 15, 50);
 	try
 	{
 		name = std::string(RED).append("Wrong Form").append(RESET);
 		// Form f2(name, 15, -1);
 		// std::cout << f2 << std::endl;
 	}
-	catch (Form::GradeTooHighException &e)
+	catch (AForm::GradeTooHighException &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch (Form::GradeTooLowException &e)
+	catch (AForm::GradeTooLowException &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}

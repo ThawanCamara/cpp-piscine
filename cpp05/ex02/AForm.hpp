@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include "Bureaucrat.hpp"
 # include <iostream>
@@ -16,7 +16,7 @@ class AForm
 		AForm(std::string name, unsigned int signGrade, unsigned int executeGrade);
 		AForm(const AForm& other);
 		AForm& operator=(const AForm& other);
-		~AForm();
+		virtual ~AForm();
 
 		class GradeTooHighException : public std::logic_error
 		{
@@ -33,13 +33,23 @@ class AForm
 			public:
 				SignedException();
 		};
+		class NotSignedException : public std::logic_error
+		{
+			public:
+				NotSignedException();
+		};
+
 		void checkGrade();
 		void beSigned(Bureaucrat b);
+		void execute(Bureaucrat const &b) const;
 
 		std::string getName() const;
 		bool getSignStatus() const;
 		int getSignGrade() const;
 		int getExecuteGrade() const;
+
+	protected:
+		virtual void toExecute() const = 0;
 
 	private:
 		const std::string name;

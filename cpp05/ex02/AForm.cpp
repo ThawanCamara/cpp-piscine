@@ -1,4 +1,4 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
 #define PINK		"\e[38;5;13m"
 #define RESET 		"\e[0m"
@@ -17,8 +17,7 @@ AForm& AForm::operator=(const AForm& other)
 {
 	if (this != &other)
 	{
-		AForm tmp(other);
-		*this = tmp;
+		isSigned = other.getSignStatus();
 	}
 	return (*this);
 }
@@ -34,6 +33,7 @@ AForm::GradeTooLowException::GradeTooLowException() : std::logic_error(std::stri
 
 AForm::SignedException::SignedException() : std::logic_error(std::string(PINK).append("The form is already signed").append(RESET)) {}
 
+AForm::NotSignedException::NotSignedException() : std::logic_error(std::string(PINK).append("The form is not signed").append(RESET)) {}
 
 void AForm::checkGrade() {
 	if (signGrade > LOWESTGRADE || executeGrade > LOWESTGRADE)
@@ -48,6 +48,14 @@ void AForm::beSigned(Bureaucrat b) {
 	if(isSigned == true)
 		throw SignedException();
 	isSigned = true;
+}
+
+void AForm::execute(Bureaucrat const &b) const {
+	if (isSigned == false)
+		throw AForm::NotSignedException();
+	else if (b.getGrade() > executeGrade)
+		throw AForm::GradeTooLowException();
+	toExecute();
 }
 
 std::ostream &operator<<(std::ostream &os, const AForm &obj) {

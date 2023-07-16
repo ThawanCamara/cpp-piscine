@@ -2,7 +2,7 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 # define HIGHESTGRADE 1
 # define LOWESTGRADE 150
@@ -26,6 +26,7 @@ class Bureaucrat
 		void					increaseGrade();
 		void					decreaseGrade();
 		void					signForm(AForm& form);
+		void					executeForm(AForm const &form);
 
 		class GradeTooHighException : public std::logic_error
 		{
@@ -39,6 +40,6 @@ class Bureaucrat
 		};
 };
 
-std::ostream			&operator<<(std::ostream &os, const Bureaucrat &obj);
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj);
 
 #endif

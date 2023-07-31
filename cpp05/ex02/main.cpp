@@ -5,6 +5,7 @@
 #include "PresidentialPardonForm.hpp"
 #include <string>
 #include <iostream>
+#include <unistd.h>
 
 #define RESET 		"\e[0m"
 #define BOLD 		"\e[1m"
@@ -38,34 +39,41 @@ void putHeader(std::string msg)
 int main(void)
 {
 	std::string name;
-	putHeader("Creating Forms");
-	ShrubberyCreationForm a("Empathy Experiment Towards Plantile Beings");
-	RobotomyRequestForm b("Robotomy For Dummies");
-	PresidentialPardonForm c("Execute me pls");
-    Bureaucrat	HighBureucrat("High Bureaucrat", 1);
-	Bureaucrat	MediumBureucrat("Medium Bureaucrat", 43);
-	Bureaucrat	LowBureucrat("Low Bureaucrat", 140);
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << c << std::endl;
+	putHeader("Constructors");
+	ShrubberyCreationForm formTree("Empathy Experiment Towards Plantile Beings");
+	RobotomyRequestForm formRobot("Robotomy For Dummies");
+	PresidentialPardonForm formPardon("Execute me pls");
+    Bureaucrat	ceo("Ceo", 1);
+	Bureaucrat	senior("Senior", 34);
+	Bureaucrat	junior("Junior", 139);
+	std::cout << ceo << std::endl;
+	std::cout << senior << std::endl;
+	std::cout << junior << std::endl;
 	
-	std::cout << "\n\n->Low Bureaucrat will never sign this :("<<std::endl;
-	LowBureucrat.executeForm(c);
-	HighBureucrat.signForm(c);
-	LowBureucrat.executeForm(c);
-	HighBureucrat.executeForm(c);
+	putHeader("Execute: Exception Tests");
+	junior.executeForm(formPardon);
+	senior.signForm(formPardon);
+	ceo.signForm(formPardon);
+	junior.executeForm(formPardon);
+	senior.executeForm(formPardon);
+	ceo.executeForm(formPardon);
 
-	std::cout << "\n\n->Medium Bureaucrat cant execute but High Bureaucrat can help"<<std::endl;
-	MediumBureucrat.executeForm(b);
-	HighBureucrat.signForm(b);
-	MediumBureucrat.executeForm(b);
+	putHeader("Execute: Robotomy Tests");
+	ceo.signForm(formRobot);
+	junior.executeForm(formRobot);
+	senior.executeForm(formRobot);
+	ceo.executeForm(formRobot);
+	ceo.executeForm(formRobot);
+	ceo.executeForm(formRobot);
 
-	std::cout << "\n\n->Execute After grade increment"<<std::endl;
-	LowBureucrat.executeForm(a);
-	HighBureucrat.signForm(a);
-	LowBureucrat.increaseGrade();
-	LowBureucrat.increaseGrade();
-	LowBureucrat.increaseGrade();
-	LowBureucrat.executeForm(a);
+	putHeader("Execute: After Grade Increase");
+	junior.executeForm(formTree);
+	ceo.signForm(formTree);
+	junior.executeForm(formTree);
+	std::cout << BLUE << "Increasing Junior's grade by 2" << RESET << std::endl;
+	junior.increaseGrade();
+	junior.increaseGrade();
+	junior.executeForm(formTree);
+	putHeader("Destructors");
 	return (0);
 }

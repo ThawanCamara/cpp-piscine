@@ -6,13 +6,11 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:26:34 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/04/23 18:40:03 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/06 21:23:54 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-
-#include <iostream>
 
 ClapTrap::ClapTrap(std::string name)
 {

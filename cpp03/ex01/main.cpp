@@ -34,5 +34,4 @@ void printClapInfo(ClapTrap& trap)
 	std::cout << "\033[38;5;220mEnergy:\033[0m" << trap.getEnergy() << std::endl;
 	std::cout << "\033[38;5;220mDamage:\033[0m" << trap.getDamage() << std::endl;
 	std::cout << "\033[38;5;220m______________________________\033[0m"<< std::endl;
-
 }

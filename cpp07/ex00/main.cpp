@@ -6,12 +6,12 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 10:53:51 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/06 16:41:20 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/06 18:10:19 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <colors.hpp>
+#include "colors.hpp"
 #include "joker.hpp"
 
 void putHeader(std::string msg)

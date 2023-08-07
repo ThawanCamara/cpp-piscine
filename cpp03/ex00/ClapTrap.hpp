@@ -6,14 +6,15 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:26:36 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/04/23 18:27:27 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/06 21:24:01 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-#include <string>
+# include <string>
+# include <iostream>
 
 class ClapTrap
 {

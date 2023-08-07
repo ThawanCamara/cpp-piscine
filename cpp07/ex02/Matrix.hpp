@@ -6,7 +6,7 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 18:11:29 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/06 19:39:16 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/07 13:54:11 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,12 @@ class Matrix
 			return (matrix[index]);
 		}
 		
-		// T& operator()(int row, int col)
-		// {
-		// 	if (row < 0 || row >= rows || col < 0 || col >= cols)
-		// 		throw std::out_of_range("Index out of range");
-		// 	return (matrix[row][col]);
-		// }
+		T& operator()(int row, int col)
+		{
+			if (row < 0 || row >= rows || col < 0 || col >= cols)
+				throw std::out_of_range("Index out of range");
+			return (matrix[row][col]);
+		}
 
 	private:
 		T **matrix;

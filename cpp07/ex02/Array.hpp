@@ -6,7 +6,7 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 18:11:29 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/06 21:50:38 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/07 14:20:10 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,6 @@ class Array
 		
 		int	size(void) const { return (cols); };
 		
-		T *dupArray(const T *array, const int length)
-		{
-			T *ret = new T[length];
-			for (int i = 0; i < length; i++)
-				ret[i] = array[i];
-			return (ret);
-		}
 		
 		// Array-like access
 		T& operator[](int index)
@@ -56,6 +49,14 @@ class Array
 	private:
 		T *array;
 		int cols;
+
+		T *dupArray(const T *array, const int length)
+		{
+			T *ret = new T[length];
+			for (int i = 0; i < length; i++)
+				ret[i] = array[i];
+			return (ret);
+		}
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 18:41:45 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/06 19:17:44 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/06 21:50:38 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 template <typename T>
 void printContainer(Array<T> arr)
 {
-	int len = arr.getLength();
+	int len = arr.size();
 	
 	std::cout << "[ ";
 	for (int i = 0; i < len ; i++)

@@ -6,7 +6,7 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 18:11:29 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/06 19:17:25 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/06 21:50:38 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ class Array
 		Array() : array(NULL), cols(0) {};
 		Array(unsigned int n) : cols(n) { array = new T[n]; };
 		~Array() { delete[] array; };
-		Array(const Array& other) : cols(other.getLength())
+		Array(const Array& other) : cols(other.size())
 		{
-			array = dupArray(other.array, other.getLength());
+			array = dupArray(other.array, other.size());
 		};
 		Array& operator=(const Array& other)
 		{
 			delete[] array;
-			cols = other.getLength();
-			array = dupArray(other.array, other.getLength());
+			cols = other.size();
+			array = dupArray(other.array, other.size());
 			return (*this);
 		};
 		
-		int	getLength(void) const { return (cols); };
+		int	size(void) const { return (cols); };
 		
 		T *dupArray(const T *array, const int length)
 		{

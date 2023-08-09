@@ -6,34 +6,25 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 18:41:45 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/07 17:47:28 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/07 18:38:10 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_HPP
 # define UTILS_HPP
 
-# include "Array.hpp"
 # include <iostream>
-# include <stdint.h>
 
-typedef struct data
-{
-	int id;
-	uintptr_t data;
-}	data;
-
+// Modified from cpp08/ex00 to work with const iterators
 template <typename T>
-void printContainer(Array<T> &arr)
-{
-	int len = arr.size();
-	
+void printContainer(T &arr)
+{	
 	std::cout << "[ ";
-	for (int i = 0; i < len ; i++)
+	for (typename T::const_iterator it = arr.begin(); it != arr.end(); ++it)
 	{
-		if (i > 0)
+		if (it != arr.begin())
 			std::cout << ", ";
-		std::cout << arr[i];
+		std::cout << *it;
 	}
 	std::cout << " ]" << std::endl;
 }

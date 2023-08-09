@@ -6,27 +6,19 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 10:53:51 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/07 14:27:45 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/07 15:05:02 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "colors.hpp"
 #include "Array.hpp"
-#include "Matrix.hpp"
 #include "utils.hpp"
-#include <stdint.h>
 
 void putHeader(std::string msg)
 {
 	std::cout << std::endl << "===== " <<  std::string(GOLD) << msg << RESET << " =====" << std::endl;
 }
-
-typedef struct data
-{
-	int id;
-	uintptr_t data;
-}	data;
 
 int main(void)
 {
@@ -78,19 +70,4 @@ int main(void)
 	std::cout << BLUE << "Int: " << RESET << arrayInt.size() << std::endl;
 	std::cout << PINK << "Float: " << RESET << arrayFloat.size() << std::endl;
 	std::cout << GREEN << "Data: " << RESET << arrayData.size() << std::endl;
-	
-	// Array<Array<int> > arrayMatrix(4);
-	// Matrix<int> matrix(4, 4);
-	// for (int i = 0; i < 4; i++)
-	// 	arrayMatrix[i] = Array<int>(3);
-
-	// arrayMatrix[0][0] = 1;
-	// matrix(0,0) = 33;
-	// matrix[0][1] = 4;
-	// matrix[1][0] = 12;
-	// matrix[1][0] = 3;
-
-	// std::cout << arrayMatrix[0][0] << std::endl;
-	// std::cout << arrayMatrix[0][1] << std::endl;
-	// std::cout << matrix(0,0) << std::endl;
 }

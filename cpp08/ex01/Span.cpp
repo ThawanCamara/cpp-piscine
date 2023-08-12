@@ -6,7 +6,7 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 18:20:53 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/08 20:35:16 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/09 07:10:26 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void Span::fillSpan()
 		std::srand(static_cast<unsigned int>(std::time(0)));
 	while (slots > 0)
 	{
-		int n = std::rand() % remaining_slots * (std::rand() % 200);
+		int n = (std::rand() % remaining_slots + 1) * (std::rand() % 200);
 		if (uniq.find(n) == uniq.end())
 		{
 			uniq.insert(uniq.begin(), n);

@@ -6,7 +6,7 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 10:53:51 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/08 21:16:13 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/09 07:08:29 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,9 @@ int main(void)
 	if (std::cin.eof() || input == "yes")
 		b.print();
 	std::cout << std::flush;
-	std::cout << RED << "WARNING: " << RESET "Do you test operations on " << BLUE << "B" << RESET << "? (yes/no)" << std::endl;
-	std::cout << "\e[38;5;48m$>\e[0m ";
-	std::getline(std::cin, input);
-	if (std::cin.eof() || input == "yes")
-	{
-		std::cout << "-- " << GOLD << "Fetch Spans" << RESET << " --" << std::endl;
-		std::cout << "Longest span " << BLUE << "B" << RESET << ": " << b.longestSpan() << std::endl;
-		std::cout << "Shortest span " << BLUE << "B" << RESET << ": " << b.shortestSpan() << std::endl;
-	}
-	std::cout << std::flush;
+	std::cout << "-- " << GOLD << "Fetch Spans" << RESET << " --" << std::endl;
+	std::cout << "Longest span " << BLUE << "B" << RESET << ": " << b.longestSpan() << std::endl;
+	std::cout << "Shortest span " << BLUE << "B" << RESET << ": " << b.shortestSpan() << std::endl;
 	delete a;
 	return (0);
 }

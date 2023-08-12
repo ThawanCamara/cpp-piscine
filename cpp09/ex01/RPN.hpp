@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/06 18:41:45 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/09 07:03:04 by tde-souz         ###   ########.fr       */
+/*   Created: 2023/08/11 17:50:39 by tde-souz          #+#    #+#             */
+/*   Updated: 2023/08/11 19:17:50 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#ifndef RPN_HPP
+# define RPN_HPP
 
 # include <iostream>
+# include <stack>
 
-// Modified from cpp08/ex00 to work with const iterators
-template <typename T>
-void printContainer(const T &arr)
-{	
-	std::cout << "[ ";
-	for (typename T::const_iterator it = arr.begin(); it != arr.end(); ++it)
-	{
-		if (it != arr.begin())
-			std::cout << ", ";
-		std::cout << *it;
-	}
-	std::cout << " ]" << std::endl;
-}
+class RPN
+{
+	public:
+		static int evaluateStack(std::string in);
+
+	private:
+		RPN();
+		~RPN();
+		RPN(const RPN& other);
+		RPN& operator=(const RPN& other);
+		// void buildStack(const std::string in);
+		// std::stack<int> stkNumber;
+		// std::stack<char> stkOperator;
+};
 
 #endif

@@ -50,6 +50,9 @@
 		"typeinfo": "cpp",
 		"set": "cpp",
 		"list": "cpp",
-		"map": "cpp"
+		"map": "cpp",
+		"stack": "cpp",
+		"chrono": "cpp",
+		"ratio": "cpp"
 	}
 }

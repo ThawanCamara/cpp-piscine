@@ -6,7 +6,7 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 17:53:49 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/12 14:48:05 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/17 08:56:44 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ int RPN::evaluateStack(std::string in)
 
 	int (*f[4])(int, int) = {rpnSum, rpnSub, rpnMul, rpnDiv};
 	int a, b, r;
-
 	{
 		int op = 0;
 		int nb = 0;
@@ -116,6 +115,8 @@ int RPN::evaluateStack(std::string in)
 			stk.pop();
 			b = stk.top();
 			stk.pop();
+			if (stk.empty())
+				throw std::logic_error("Empty stack");
 			r = f[getOperator(in.at(i))](b, a);
 			stk.push(r);
 		}

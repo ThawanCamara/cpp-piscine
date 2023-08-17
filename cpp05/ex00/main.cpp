@@ -36,7 +36,7 @@ int main(void)
 
 	putHeader("Creating Bureaucrats");
 	name = std::string(RED).append("Simpson").append(RESET);
-	Bureaucrat a = Bureaucrat(name, 303);
+	Bureaucrat a(name, 130);
 
 	name = std::string(GREEN).append("Steeve").append(RESET);
 	Bureaucrat *b = new Bureaucrat(name, 75);
@@ -85,9 +85,22 @@ int main(void)
 	putHeader("Creating wrong Bureaucrats");
 	try {
 		Bureaucrat e = Bureaucrat("failure", 151);
-		// Bureaucrat f = Bureaucrat("failure", -1);
-		// Bureaucrat *h = new Bureaucrat("failure", -1);
-		// (void)h;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << std::string(TEAL).append("Not a proper bureaucrat.").append(RESET) << std::endl;
+	}
+	try {
+		Bureaucrat f = Bureaucrat("failure", -1);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << std::string(TEAL).append("Not a proper bureaucrat.").append(RESET) << std::endl;
+	}
+	try {
+		Bureaucrat *h = new Bureaucrat("failure", -1);
+		(void)h;
+		delete h;
 	}
 	catch (std::exception &e)
 	{

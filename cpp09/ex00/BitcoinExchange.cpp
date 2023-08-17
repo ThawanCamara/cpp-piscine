@@ -6,7 +6,7 @@
 /*   By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:56:30 by tde-souz          #+#    #+#             */
-/*   Updated: 2023/08/12 14:53:14 by tde-souz         ###   ########.fr       */
+/*   Updated: 2023/08/17 08:58:10 by tde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void BitcoinExchange::createDatabase(std::string dataFile)
 		if (std::getline(ss, strDate, ','))
 		{
 			Date date(strDate);
-			double value;
+			double value = 0;
 
 			if (std::getline(ss, strValue))
 			{
@@ -131,7 +131,7 @@ void BitcoinExchange::makeExchange(std::string in) const
 		
 		Date date;
 		std::string trimmedDate;
-		double value;
+		double value = 0;
 		if (std::getline(ss, strDate, '|'))
 		{
 			strDate = trimString(strDate);

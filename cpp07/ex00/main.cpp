@@ -19,6 +19,13 @@ void putHeader(std::string msg)
 	std::cout << std::endl << "===== " <<  std::string(GOLD) << msg << RESET << " =====" << std::endl;
 }
 
+typedef struct s_Data
+{
+	std::string name;
+	int	age;
+	float money;
+}	Data;
+
 int main(void)
 {
 	std::string input;
@@ -28,6 +35,14 @@ int main(void)
 	int b = 300;
 	std::string s1 = "abacate";
 	std::string s2 = "mordor";
+	Data c;
+	Data d;
+	c.name = "ola";
+	d.name = "aios";
+	swap(c, d);
+	std::cout << "c = " << c.name << std::endl; 
+	std::cout << "d = " << d.name << std::endl; 
+
 	std::cout << "a = " << a << std::endl; 
 	std::cout << "b = " << b << std::endl;
 	std::cout << "s1 = " << s1 << std::endl; 
